@@ -1,0 +1,92 @@
+/* Color Palette */
+:root {
+    --primary-color: #4E6EFF; /* Primary color (blue) */
+    --secondary-color: #FF6A78; /* Secondary color (pink) */
+    --accent-color: #FFC947; /* Accent color (yellow) */
+    --neutral-dark: #333333; /* Neutral dark color (text) */
+    --neutral-light: #FFFFFF; /* Neutral light color (background) */
+    --success-color: #3CB371; /* Success color (green) */
+    --error-color: #FF6347; /* Error color (red) */
+}
+
+/* Reset styles */
+body,
+header,
+main,
+footer {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--neutral-dark); 
+    background-color: var(--neutral-light); 
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header{
+    grid-column: 1/3;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+header h1{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.sidebar{
+    padding: 1rem;
+    grid-row: 2/4;
+    background-color: var(--secondary-color);
+}
+
+.sidebar .top > div{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .bottom > div{
+    display: flex;
+    align-items: center;
+}
+
+
+footer{
+    grid-column: 1/3;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--accent-color);
+}
+
