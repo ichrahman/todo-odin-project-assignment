@@ -29,7 +29,7 @@ addBtn.addEventListener('click', () => {
 
     if (projectName.trim() !== '') {
         const taskElement = document.createElement('div');
-        taskElement.innerHTML = projectName;
+        taskElement.innerHTML = `<i class="fa-solid fa-list-check"></i> <span>${projectName}</span> <button class="delete-button"><i class="fa-solid fa-xmark"></i></button>`;
         projectsDiv.appendChild(taskElement);
         reset();
     } else {
