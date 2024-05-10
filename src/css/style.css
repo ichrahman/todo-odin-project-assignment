@@ -121,13 +121,18 @@ header h1{
 .sidebar .bottom  h3{
     font-size: 1.2rem;
     font-weight: 600;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 .sidebar .top > div,
 .sidebar .bottom > div{
     padding: 12px 10px;
 }
+
+.selected{
+    background-color: #706161;
+}
+
 
 .input-field{
     padding: 5px;
@@ -176,6 +181,29 @@ header h1{
 .projects > div span{
     margin-left: 10px;
 }
+
+main{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.main-header h2{
+    font-size: 1.5rem;
+    margin-top: 25px;
+}
+
+
+.add-task{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+
+
+
 
 
 footer{
