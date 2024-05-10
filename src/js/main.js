@@ -9,6 +9,10 @@ const inbox = document.querySelector('.inbox');
 const today = document.querySelector('.today');
 const thisWeek = document.querySelector('.this-week');
 
+const mainHeder = document.querySelector('.main-header');
+const addTask = document.querySelector('.add-task');
+const displayTask = document.querySelector('.display');
+
 
 let flag = true;
 
@@ -50,6 +54,19 @@ cancelBtn.addEventListener('click', () => {
 
 // main
 function selectCategory(category) {
+    const headerList = {
+        'inbox': 'Inbox',
+        'today': 'Today',
+        'this-week': 'This Week'
+    }
+
+    mainHeder.innerHTML = `
+        <div>
+            <h2>${headerList[category]}</h2>
+        </div>
+    
+    `
+
     document.querySelectorAll('.top > div').forEach(element => {
         element.classList.remove('selected');
     })
@@ -72,6 +89,42 @@ today.addEventListener('click', () => {
 thisWeek.addEventListener('click', () => {
     selectCategory('this-week');
 });
+
+
+
+// add task
+const addTaskField = document.querySelector('.add-task-field');
+const addTaskBtn = document.querySelector('#add-task-btn');
+const cancelFieldBtn = document.querySelector('#cancel-field-btn');
+
+addTask.addEventListener('click', () => {
+    addTaskField.style.display = 'block';
+})
+
+addTaskBtn.addEventListener('click', () => {
+    const displayList = document.querySelector('.display-list')
+    const inputTaskField = document.querySelector('#input-task-field');
+    const taskName = inputTaskField.value.trim();
+
+    if (taskName === '') {
+        alert('Enter a task name');
+        return
+    }
+
+    const newTaskItem = document.createElement('li');
+    newTaskItem.innerHTML = `<input type="checkbox"><label>${taskName}</label>`;
+    displayList.appendChild(newTaskItem);
+
+
+    inputTaskField.value = '';
+})
+
+
+cancelFieldBtn.addEventListener('click', () => {
+    addTaskField.style.display = 'none';
+})
+
+
 
 
 
